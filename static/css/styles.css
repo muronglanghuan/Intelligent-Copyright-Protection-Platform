@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #252644;
+    color: white;
+}
+
+.box {
+    border: 1px solid #222546;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%; /* 使用百分比宽度 */
+    background-color: #2c2c54;
+    padding: 1%; /* 使用百分比内边距 */
+    box-sizing: border-box;
+}
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo img {
+    width: 100%;
+
+    margin-right: 10px; /* 图片之间的间距 */
+}
+.box {
+    border: 1px solid #222546;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+.a {
+    width:17%;
+    display: flex;
+    flex-direction: column;
+    background-color: #222546;
+    color:#ffffff;
+    gap:20px;
+}
+.a1 {
+    display: flex;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: start;
+}
+
+.a1 img {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px
+}
+
+.a1 h1 {
+    font-size: 1.65em;
+    color: #fff;
+}
+
+.a2 {
+    flex-grow: 1;
+    color: #fff;
+    gap: 40px;
+}
+
+
+.menu-item p1 {
+    color: #4E81DA;
+    font-size: 1.5em; 
+    margin: 0 10px; 
+    flex-grow: 1; 
+    text-align: center; 
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 50px;
+    background-color: #222546;
+    cursor: pointer;
+}
+.menu-item p {
+    color: #fff;
+    font-size: 1.5em; 
+    margin: 0 10px; 
+    flex-grow: 1; 
+    text-align: center; 
+}
+.menu-item img {
+    width: 30px;
+    height: 30px;
+}
+.sidebar .menu {
+    width: 90%;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    padding: 5% 0; /* 使用百分比内边距 */
+    cursor: pointer;
+}
+
+.sidebar .menu li ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 10%; /* 使用百分比左内边距 */
+}
+
+.sidebar .menu li ul li {
+    padding: 5% 0; /* 使用百分比内边距 */
+}
+
+.main-content {
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+
+.dengji-page {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    padding: 4%;
+
+}
+.x{
+    border-top: 100px solid #252644; 
+    width: 60%;
+}
+.dengji-page .dengji_img{
+    display: flex;
+    width: 100%;
+}
+.dengji-page .dengji_img img{
+    display: flex;
+    width: 100%;
+
+}
+.cc{
+    width: 40%;
+    border-top: 40px solid #252644; 
+
+}
+.registration-form {
+    width: 80%;
+    background-color: #334372;
+    padding: 2%; /* 使用百分比内边距 */
+    border-radius: 10px;
+
+
+}
+
+.registration-form h1 {
+    margin-top: 0;
+}
+
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form form label {
+    height: 15px;
+    margin-top: 2%; /* 使用百分比外边距 */
+    margin-bottom: 5%; /* 使用百分比外边距 */
+}
+
+.registration-form form input {
+    padding: 1%; /* 使用百分比内边距 */
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5%; /* 使用百分比外边距 */
+}
+
+.registration-form form button {
+    padding: 5%; /* 使用百分比内边距 */
+    border: none;
+    border-radius: 15px;
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    justify-content: flex-end;
+    margin-top: 10%; /* 让按钮在垂直方向上自动分配空间 */
+    margin-bottom: 5%; 
+}
+
+.registration-form form button:hover {
+    background-color: #004494;
+
+}
