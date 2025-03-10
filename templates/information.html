@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<!--    {% load static %}-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新商品注册</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/css.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box a">
+            <a href="/index">
+                <div class="a1">
+                    <img src="../static/img/logo.png" alt="Logo">
+                    <h1>谛听版权保护</h1>
+                </div>
+            </a>
+            <div class="a2">
+                <a href="/index">
+                    <div class="menu-item">
+                        <img src="../static/img/icon1（2）.png" alt="Icon1">
+                        <p>数据中心</p>
+                        <img src="../static/img/方向%20(1).png" alt="Arrow">
+                    </div>
+                </a>
+                <a href="/information">
+                    <div class="menu-item" href="?direction=information">
+                        <img src="../static/img/引用组件 2 (6).png" alt="Icon2">
+                        <p1>登记管理</p1 >
+                        <img src="../static/img/方向.png" alt="Arrow">
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="menu-item" href="?direction=submit">
+                        <img src="../static/img/引用组件%202%20(2).png" alt="Icon3">
+                        <p>数据对比</p >
+                        <img src="../static/img/方向%20(1).png" alt="Arrow">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="b">
+                <div class="b-header">
+                    <input type="text" placeholder="请输入搜索关键词">
+                    <a href="/login">
+                        <div class="user-profile">
+                            <img src="../static/img/user.png" alt="游客7527">
+                        </div>
+                    </a>
+                    <a href="/login">
+                        <span>游客9527</span>
+                    </a>
+                </div>
+            </div>
+            <div class="dengji-page">
+                <div class="x">
+                    <div class="dengji_img">
+                        <img src="../static/img/版权背景.png">
+                    </div>
+                </div>
+               <div class="cc"style="width: 40%;border-top: 40px solid #252644;">
+                    <div class="registration-form">
+                        <h1>新商品注册</h1>
+                        <form id="registrationForm">
+                            <label for="brand">品牌</label>
+                            <input type="text" id="brand" placeholder="请输入新品牌的名称">
+
+                            <label for="category">类别</label>
+                            <input type="text" id="category" placeholder="请选择类别">
+
+                            <label for="description">描述</label>
+                            <input type="text" id="description" placeholder="请填写商品描述">
+
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('registrationForm');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // 防止表单提交
+                alert('用户未登录！请在登录后重试'); // 弹窗消息
+            });
+        });
+        document.addEventListener('keydown', function(event) {
+            // 检查是否按下回车键 (Enter 键的键码是 13)
+            if (event.key === 'Enter') {
+
+                alert('用户未登录！请在登录后重试');
+            }
+        });
+            document.addEventListener('keydown', function(event) {
+    if (event.keyCode === 123) { // F12键的键码
+        event.preventDefault();
+    }
+});
+    document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+    window.addEventListener('load', function() {
+    const check = () => {
+        if (document.hidden) {
+            console.log('DevTools opened!');
+            // 可以在这里执行一些操作
+        }
+    };
+    document.addEventListener('visibilitychange', check);
+});
+    </script>
+</body>
+</html>

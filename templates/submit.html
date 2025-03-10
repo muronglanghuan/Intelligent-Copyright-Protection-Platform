@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+
+    <!--    {% load static %}-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/css2.css">
+    <title>Webpage Design</title>
+</head>
+<body>
+<div class="container">
+    <div class="box a">
+        <a href="/index">
+            <div class="a1">
+                <img src="../static/img/logo.png" alt="Logo">
+                <h1>谛听版权保护</h1>
+            </div>
+        </a>
+        <div class="a2">
+            <a href="/index">
+                <div class="menu-item">
+                    <img src="../static/img/icon1（2）.png" alt="Icon1">
+                    <p>数据中心</p>
+                    <img src="../static/img/方向%20(1).png" alt="Arrow">
+                </div>
+            </a>
+            <a href="/information">
+                <div class="menu-item" href="?direction=information">
+                    <img src="../static/img/引用组件%202%20(1).png" alt="Icon2">
+                    <p>登记管理</p>
+                    <img src="../static/img/方向%20(1).png" alt="Arrow">
+                </div>
+            </a>
+            <a href="/">
+                <div class="menu-item" href="?direction=submit">
+                    <img src="../static/img/引用组件%202%20(7).png" alt="Icon3">
+                    <p1>数据对比</p1>
+                    <img src="../static/img/方向.png" alt="Arrow">
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="box b">
+            <div class="b-header">
+                <input type="text" placeholder="请输入搜索关键词">
+                <a href="/login">
+                    <div class="user-profile">
+                        <img src="../static/img/user.png" alt="游客7527">
+                    </div>
+                </a>
+                <a href="/login">
+                    <span>游客9527</span>
+                </a>
+            </div>
+        </div>
+        <div class="box c">
+            <div class="c-body">
+                <div class="c1" style="width: 100%">
+                    <form id="image-upload-form" action="#" method="POST" enctype="multipart/form-data"
+                          style="width: 100%; background-color: #1847bd; padding: 2%; border-radius: 10px;">
+                        {% csrf_token %}
+                        <h1 style="color: white">商品图片</h1>
+                        <p style="color: white">最多10张</p>
+                        <!--                            <img src="../static/img/charta.png" alt="Chart1">-->
+                        <div>
+                            <div class="MuiBox-root css-0" style="position: relative; display: inline-block;">
+                                <div style="display: flex; align-items: center;">
+                                    <label tabindex="0" role="button" data-testid="msh-chatinput-upload-button"
+                                           style="cursor: pointer;width: 50%;height: auto">
+                                        <img src="../static/img/引用组件%202%20(5).png" alt="Upload Icon"
+                                             style="width: 100%; height: auto;"/>
+                                        <input aria-invalid="false" id=":ra:" name="file" type="file" multiple=""
+                                               accept="image/*, .jpg, .jpeg, .png, .bmp, .webp, "
+                                               onchange="updateFileList()" style="display: none;"/>
+                                    </label>
+                                    <div style="display: inline-block; vertical-align: middle; margin-left: 10px;">
+                                        <span class="notranslate" style="color: white">上传文件：</span>
+                                        <ul id="file-list" style="list-style-type: none; padding: 0; margin: 0; color: white"></ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <script>
+                            function updateFileList() {
+                                var input = document.getElementById(':ra:');
+                                var list = document.getElementById('file-list');
+                                var maxFiles = 10;
+
+                                // 先清空当前的列表
+                                list.innerHTML = '';
+
+                                // 如果文件数量超过10个，则只添加前10个文件
+                                var files = input.files;
+                                if (files.length > maxFiles) {
+                                    files = Array.from(files).slice(0, maxFiles);
+                                }
+
+                                // 添加文件到列表
+                                for (var i = 0; i < files.length; i++) {
+                                    var listItem = document.createElement('li');
+                                    listItem.textContent = files[i].name;
+                                    list.appendChild(listItem);
+                                }
+
+                                // 如果没有文件被上传，添加10个空行
+
+                            }
+                        </script>
+                        <p style="color: white">图像格式应为.jpg, .jpeg, .png, .bmp, .webp等格式</p>
+                        <button type="submit">提交</button>
+                    </form>
+                </div>
+
+                <div class="c2">
+                    <div id="main" style="width: 80%;height:75%;"></div>
+                    <!--                    <img src="../static/img/chartb.png" alt="Chart2">-->
+                </div>
+                <div class="c3">
+                    <img src="../static/img/chartc.png" alt="Chart3">
+                </div>
+                <div class="c4">
+                    <img src="../static/img/chartd.png" alt="Chart4">
+                </div>
+                <div class="c5">
+                    <img src="../static/img/charte.png" alt="Chart5">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!--<script>-->
+<!--    document.getElementById('image-upload-form').onsubmit = function (e) {-->
+<!--        e.preventDefault();-->
+<!--        var formData = new FormData(this);-->
+<!--        $.ajax({-->
+<!--            url: "{% url 'submit' %}", // 此处填写适合您的实际提交URL-->
+<!--            type: "POST",-->
+<!--            data: formData,-->
+<!--            contentType: false,-->
+<!--            processData: false,-->
+<!--            success: function (data) {-->
+<!--                renderChart(data);-->
+<!--            },-->
+<!--            error: function (xhr) {-->
+<!--                console.error('An error occurred: ' + xhr.statusText);-->
+<!--            }-->
+<!--        });-->
+<!--    };-->
+
+<!--    function renderChart(data) {-->
+<!--        var myChart = echarts.init(document.getElementById('main'));-->
+<!--// 解析数据并进行排序-->
+<!--        var labels = [];-->
+<!--        var values = [];-->
+<!--        data.results[0].forEach(function (item) {-->
+<!--            var parts = item.split(': ');-->
+<!--            labels.push(parts[0]);-->
+<!--            values.push(parseFloat(parts[1].replace('%', '')));-->
+<!--        });-->
+<!--// 数据排序（根据 values 从高到低）-->
+<!--        var list = values.map((value, index) => ({value: value, label: labels[index]}));-->
+<!--        list.sort((a, b) => b.value - a.value);-->
+<!--// 分开标签和数值以适应排序-->
+<!--        labels = list.map(item => item.label);-->
+<!--        values = list.map(item => item.value);-->
+<!--// ECharts 配置-->
+<!--        var option = {-->
+<!--            title: {-->
+<!--                text: '图像分析结果',-->
+<!--                left: 'center'-->
+<!--            },-->
+<!--            tooltip: {-->
+<!--                trigger: 'axis',-->
+<!--                axisPointer: {-->
+<!--                    type: 'shadow'-->
+<!--                }-->
+<!--            },-->
+<!--            grid: {-->
+<!--                left: '3%',-->
+<!--                right: '4%',-->
+<!--                bottom: '3%',-->
+<!--                containLabel: true-->
+<!--            },-->
+<!--            xAxis: {-->
+<!--                type: 'value',-->
+<!--                boundaryGap: [0, 0.01]-->
+<!--            },-->
+<!--            yAxis: {-->
+<!--                type: 'category',-->
+<!--                data: labels,-->
+<!--                axisLabel: {-->
+<!--                    interval: 0, // 显示所有标签-->
+<!--                    formatter: function (value) {-->
+<!--                        return value;-->
+<!--                    }-->
+<!--                }-->
+<!--            },-->
+<!--            series: [-->
+<!--                {-->
+<!--                    name: 'Percentage',-->
+<!--                    type: 'bar',-->
+<!--                    data: values-->
+<!--                }-->
+<!--            ]-->
+<!--        };-->
+<!--        myChart.setOption(option);-->
+<!--    }-->
+<!--    document.addEventListener('keydown', function(event) {-->
+<!--    if (event.keyCode === 123) { // F12键的键码-->
+<!--        event.preventDefault();-->
+<!--    }-->
+<!--});-->
+<!--    document.addEventListener('contextmenu', function(event) {-->
+<!--    event.preventDefault();-->
+<!--});-->
+<!--    window.addEventListener('load', function() {-->
+<!--    const check = () => {-->
+<!--        if (document.hidden) {-->
+<!--            console.log('DevTools opened!');-->
+<!--            // 可以在这里执行一些操作-->
+<!--        }-->
+<!--    };-->
+<!--    document.addEventListener('visibilitychange', check);-->
+<!--});-->
+<!--</script>-->
+<script>
+    document.getElementById('image-upload-form').onsubmit = function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            url: "{% url 'submit' %}",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                renderChart(data);   // 在这里调用
+            },
+            error: function (xhr) {
+                console.error('An error occurred: ' + xhr.statusText);
+            }
+        });
+    };
+
+function renderChart(data) {
+        // 获取要放置 ECharts 的 DOM 容器
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 2) 区分单张图 & 多张图
+        if (!data.similarity_matrix) {
+            myChart.clear();
+            // ============== 只有 1 张图时，做条形图 ==============
+            // 如果后端提示只有一张图
+            if (data.message) {
+                console.log(data.message);
+                // 或者可以 alert(data.message);
+            }
+
+            var singleInfo = data.image_info;
+            if (!singleInfo) {
+                alert('后端未返回标签数据');
+                return;
+            }
+
+            // 后端的 top10: [{ "tag": "...", "prob": 0.88 }, ...]
+            // 这里将 prob 从 0~1 映射到 0~100，方便可视化
+            var tagLabels = singleInfo.top10.map(item => item.tag);
+            var probabilities = singleInfo.top10.map(item => item.prob * 100);
+
+            // 通过一个回调函数，基于当前数值来生成“从蓝色到红色”的渐变
+            function getColorByValue(value) {
+                // value 范围：0 ~ 100
+                // 起始颜色(0%)：蓝色 [0, 0, 255]
+                // 结束颜色(100%)：红色 [255, 0, 0]
+                var startColor = [0, 0, 255];
+                var endColor = [255, 0, 0];
+                var ratio = value / 100; // 将 0~100 转成 0~1
+
+                var r = parseInt(startColor[0] + ratio * (endColor[0] - startColor[0]));
+                var g = parseInt(startColor[1] + ratio * (endColor[1] - startColor[1]));
+                var b = parseInt(startColor[2] + ratio * (endColor[2] - startColor[2]));
+                return 'rgb(' + r + ',' + g + ',' + b + ')';
+            }
+
+            // 配置条形图
+            var option = {
+                backgroundColor: '#2B2B3A', // 如果你有深色背景，可选；没有可去掉
+                title: {
+                    text: '标签概率分布',
+                    left: 'center',
+                    textStyle: {
+                        color: '#fff' // 深色背景时标题设为白色
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow' },
+                    formatter: function (params) {
+                        // params: 数组，通常只有一项
+                        if (params.length > 0) {
+                            return (
+                                params[0].name +
+                                ' : ' +
+                                params[0].value.toFixed(2) + '%'
+                            );
+                        }
+                        return '';
+                    }
+                },
+                grid: {
+                    height:'90%',
+                    width:'90%',
+                    top:'2%',
+                    left: '2%',
+                    right: '2%',
+                    bottom: '2%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    name: 'Prob(%)',
+                    axisLine: {
+                        lineStyle: { color: '#ccc' }
+                    },
+                    splitLine: {
+                        lineStyle: { color: '#444' }
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: tagLabels,
+                    axisLine: {
+                        lineStyle: { color: '#ccc' }
+                    },
+                    axisLabel: {
+                        color: '#fff' // 若背景是深色，可将文字设为白色
+                    }
+                },
+                visualMap: {
+                    // 如果想要在下方加一个可调节的“温度带”，可以试试可视化映射
+                    // show: true, // 看你需要是否显示
+                    show: false,
+                    min: 0,
+                    max: 100,
+                    dimension: 0, // 针对 x 值 (value)
+                    inRange: {
+                        color: ['blue', 'red']
+                    }
+                },
+                series: [
+                    {
+                        name: 'Probability',
+                        type: 'bar',
+                        data: probabilities,
+                        label: {
+                            show: true,
+                            position: 'right',
+                            formatter: '{c}%',
+                            color: '#fff'
+                        },
+                        itemStyle: {
+                            // 利用回调函数控制每个柱条的颜色
+                            color: function (params) {
+                                var val = params.value; // 这里就是当前柱状图的数值
+                                return getColorByValue(val);
+                            }
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        } else {
+            myChart.clear();
+            // ======= 热力图：相似度矩阵 =======
+            var fileNames = data.images_info.map(function(item) {
+                return item.file_name;
+            });
+            var matrix = data.similarity_matrix;
+            // matrix 大小为 n x n
+
+            // 将 matrix 转换成 ECharts heatmap 需要的 [x, y, value] 格式
+            var heatmapData = [];
+            for (var i = 0; i < matrix.length; i++) {
+                for (var j = 0; j < matrix[i].length; j++) {
+                    heatmapData.push([j, i, matrix[i][j]]);
+                }
+            }
+
+            var option = {
+                backgroundColor: 'rgba(0,0,0,0)',
+                title: {
+                    text: '相似度矩阵',
+                    left: 'center'
+                },
+                tooltip: {
+                    position: 'top',
+                    formatter: function (params) {
+                        // params.data = [x, y, value]
+                        var i = params.data[1];
+                        var j = params.data[0];
+                        return fileNames[i] + ' vs ' + fileNames[j]
+                            + '<br/>相似度：' + params.data[2].toFixed(3);
+                    }
+                },
+                animation: false,
+                grid: {
+                    height:'90%',
+                    width:'90%',
+                    top:'2%',
+                    left: '2%',
+                    right: '2%',
+                    bottom: '2%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: fileNames,
+                    splitArea: { show: true },
+                    axisLabel: {
+                        rotate: 30 // 如果文件名较长，可以旋转标签
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: fileNames,
+                    splitArea: { show: true }
+                },
+                // 这里通过 inRange 设置“深蓝 ~ 白 ~ 红”的颜色渐变
+                visualMap: {
+                    min: 0,
+                    max: 1,
+                    calculable: true,
+                    orient: 'horizontal',
+                    left: 'center',
+                    bottom: '5%',
+                    inRange: {
+                        color: ['#00008B', '#FFFAFA', '#FF0000']
+                    }
+                },
+                series: [{
+                    name: 'Similarity',
+                    type: 'heatmap',
+                    data: heatmapData,
+                    label: {
+                        show: true,
+                        formatter: function(params) {
+                            return params.data[2].toFixed(2);
+                        },
+                        color: '#000'
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            };
+
+            myChart.setOption(option);
+        }
+    }
+
+    // 以下屏蔽F12、右键等代码保持不变
+    document.addEventListener('keydown', function(event) {
+        if (event.keyCode === 123) { // F12键的键码
+            event.preventDefault();
+        }
+    });
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+    window.addEventListener('load', function() {
+        const check = () => {
+            if (document.hidden) {
+                console.log('DevTools opened!');
+                // 可以在这里执行一些操作
+            }
+        };
+        document.addEventListener('visibilitychange', check);
+    });
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('registrationForm');
+
+        form.addEventListener('submit', (event) => {
+            // event.preventDefault(); // 防止表单提交
+            // alert('用户未登录！请在登录后重试'); // 弹窗消息
+        });
+    });
+    document.addEventListener('keydown', function (event) {
+        // 检查是否按下回车键 (Enter 键的键码是 13)
+        if (event.key === 'Enter') {
+
+            alert('用户未登录！请在登录后重试');
+        }
+    });
+</script>

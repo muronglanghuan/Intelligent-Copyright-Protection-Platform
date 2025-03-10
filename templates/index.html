@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<!--    {% load static %}-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/css.css">
+    <title>Webpage Design</title>
+</head>
+<body>
+<div class="container">
+    <div class="box a">
+            <a href="/index">
+                <div class="a1">
+                    <img src="../static/img/logo.png" alt="Logo">
+                    <h1>谛听版权保护</h1>
+                </div>
+            </a>
+            <div class="a2">
+                <a href="/index">
+                    <div class="menu-item">
+                        <img src="../static/img/39.png" alt="Icon1">
+                        <p1>数据中心</p1>
+                        <img src="../static/img/方向.png" alt="Arrow">
+                    </div>
+                </a>
+                <a href="/information">
+                    <div class="menu-item" href="?direction=information">
+                        <img src="../static/img/引用组件%202%20(1).png" alt="Icon2">
+                        <p>登记管理</p >
+                        <img src="../static/img/方向%20(1).png" alt="Arrow">
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="menu-item" href="?direction=submit">
+                        <img src="../static/img/引用组件%202%20(2).png" alt="Icon3">
+                        <p>数据对比</p >
+                        <img src="../static/img/方向%20(1).png" alt="Arrow">
+                    </div>
+                </a>
+            </div>
+    </div>
+    <div class="main-content">
+        <div class="box b">
+            <div class="b-header">
+                <input type="text" placeholder="请输入搜索关键词">
+                    <a href="/login">
+                        <div class="user-profile">
+                            <img src="../static/img/user.png" alt="游客7527">
+                        </div>
+                    </a>
+                    <a href="/login">
+                        <span>游客9527</span>
+                    </a>
+            </div>
+        </div>
+        <div class="box c">
+            <div class="c-header">
+                <h2>数据看板</h2>
+                <h3>更新时间: 2024年 3月1日下午14:30:15</h3>
+            </div>
+            <div class="c-body">
+                <div class="c1">
+                    <img src="../static/img/chart1.png" alt="Chart1">
+                    <img src="../static/img/chart2.png" alt="Chart2">
+                    <img src="../static/img/chart3.png" alt="Chart3">
+                    <img src="../static/img/chart4.png" alt="Chart4">
+                </div>
+                <div class="c2">
+                    <img src="../static/img/long-chart.png" alt="Long Chart">
+                </div>
+                <div class="c3">
+                    <img src="../static/img/vertical-chart.png" alt="Vertical Chart">
+                </div>
+                <div class="c4">
+                    <img src="../static/img/bottom-chart.png" alt="Bottom Chart">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    <script>
+
+        document.addEventListener('keydown', function(event) {
+            // 检查是否按下回车键 (Enter 键的键码是 13)
+            if (event.key === 'Enter') {
+
+                alert('用户未登录！请在登录后重试');
+            }
+        });
+            document.addEventListener('keydown', function(event) {
+    if (event.keyCode === 123) { // F12键的键码
+        event.preventDefault();
+    }
+});
+    document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+    window.addEventListener('load', function() {
+    const check = () => {
+        if (document.hidden) {
+            console.log('DevTools opened!');
+            // 可以在这里执行一些操作
+        }
+    };
+    document.addEventListener('visibilitychange', check);
+});
+    </script>
+</html>
